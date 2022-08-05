@@ -48,10 +48,10 @@ class DeviceSimulator:
                 else:
                     if value == True or value == False:
                         curr_v = random.choice([True, False, True, False])
-                        print(curr_v)
+
                         device[key] = curr_v
                     elif isinstance(value, (int, float)):
-                        print(key, '\n', value)
+                        
                         curr_v = round(uniform(device[key] * 0.99, device[key] * 1.01), 2)
                         device[key] = curr_v
 
