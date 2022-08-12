@@ -2,14 +2,14 @@
 MQTT_PARAMS = {'PUBLISHER': "lutyisan", # Имя клиента (любое)
                'TRANSPORT': "websockets", # Выбор протокола tcp или websockets
                'PATH': "/ws", # URL
-               'USER_NAME': "admin", # Логин
-               'USER_PASS': "admin",  # Пароль
-               'HOST': "46.8.210.67",  # Адрес брокера
+               'USER_NAME': "user", # Логин
+               'USER_PASS': "user",  # Пароль
+               'HOST': "mq.4iot.pro",  # Адрес брокера
                'PORT': 15675,  # Порт брокера
                'SLEEPING_TIME': 3} # Период оиправки данных
 
 # dict девайса с сигналами
-heat_counter = {'name': "heat-counter",
+heat_counter = {'name': "heatCounter",
              'TE-1': 56,
              "TE-2": 34,
              'TE-3': 70,
@@ -26,7 +26,7 @@ heat_counter = {'name': "heat-counter",
              "heat_energy": 786}
 
 # dict девайса с сигналами
-el_counter = {'name': "el-counter",
+el_counter = {'name': "elCounter",
            'volt_a': 221,
            "volt_b": 219,
            'volt_c': 223,
@@ -42,13 +42,13 @@ el_counter = {'name': "el-counter",
            }
 
 # dict девайса с сигналами
-cool_water_counter = {"name": 'cool-water', "volume": 4356}
+cool_water_counter = {"name": 'coolWater', "volume": 4356}
 
 # dict девайса с сигналами
-heat_water_counter = {'name': "heat-water", "volume": 3871}
+heat_water_counter = {'name': "heatWater", "volume": 3871}
 
 # dict девайса с сигналами
-dn_station = {'name': "dn-1",
+dn_station = {'name': "dnStation",
                    "pump1_work": False,
                    "pump1_alarm": True,
                    "pump2_work": False,
@@ -194,7 +194,7 @@ light = {"name": "light",
          "lamp_12_start": True,
          "lamp_12_dimm": 50
          }
-water_station = {"name": "water_station",
+water_station = {"name": "waterStation",
                  "pe_1": 1.4,
                  "pe_2": 3.2,
                  "pe_3": 3.1,
