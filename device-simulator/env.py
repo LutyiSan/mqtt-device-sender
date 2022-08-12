@@ -54,7 +54,40 @@ dn_station = {'name': "dn-1",
                    "pump2_work": False,
                    "pump2_alarm": True,
                    "ls-1": True,
-                   "ls-2": False}
+                   "ls-2": False,
+                   "ls_3": False}
+
+# dict девайса с сигналами
+ahu = {'name': "ahu",
+                   "te_oat": 25.8,
+                   "te_sf": 23.1,
+                   "te_rf": 24.5,
+                   "te_heat": 38.3,
+                   "heat_valve": 1.0,
+                   "cool_valve": 76.2,
+                   "rec_valve": 10.6,
+                   "sf_state": True,
+                   "rf_state": False,
+                   "heat_pump_state": False,
+                   "cool_pump_state": True,
+                   "rec_pump_state": False,
+                   "sf_dumper": True,
+                   "rf_dumper": False,
+                   "rec_dumper": True,
+                   "termostat": False,
+                   "flter_1": True,
+                   "filter_2": True,
+                   "filter_3": False,
+                   "start_ahu": True,
+                   "temp_set": 22,
+                   "season": 1,
+                   "start_heat_pump": 2,
+                   "start_cool_pump": 2,
+                   "start_rec_pump": 2,
+                   "start_sf_dumper": True,
+                   "start_rf_dumper": False,
+                   "start_rec_dumper": True
+                   }
 
 DEVICES = [heat_counter, el_counter, cool_water_counter, heat_water_counter, dn_station]
 
