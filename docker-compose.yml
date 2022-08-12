@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+
+  simulator:
+     build: .
+     volumes:
+       - ./device-simulator:/device-simulator
+     network_mode: host
