@@ -1,7 +1,7 @@
 FROM   python:latest
 
-COPY    ./simulator /simulator
+COPY    ./device-simulator /device-simulator
 
 RUN    pip3 install -r /simulator/requirements.txt
 
-CMD    python3 /main.py
+CMD    python3 device-simulator/main.py
