@@ -88,6 +88,29 @@ ahu = {'name': "ahu",
                    "start_rf_dumper": False,
                    "start_rec_dumper": True
                    }
-
-DEVICES = [heat_counter, el_counter, cool_water_counter, heat_water_counter, dn_station]
+itp = {"name": "itp",
+       "te_1": 68.3,
+       "te_2": 62.3,
+       "te_3": 60.3,
+       "te_4": 51.3,
+       "te_5": 65.3,
+       "te_6": 57.3,
+       "pe_1": 4.6,
+       "pe_2": 3.6,
+       "pe_3": 4.4,
+       "pe_4": 4.1,
+       "valve_1": 34,
+       "valve_2": 12,
+       "pump_1": True,
+       "pump_2": False,
+       "pump_3": False,
+       "pump_4": True,
+       "dps_1": True,
+       "dps_2": False,
+       "dps_3": False,
+       "dps-4": True,
+       "set_gvs_temp": 55.0,
+       "set_ot_temp": 68
+       }
+DEVICES = [heat_counter, el_counter, cool_water_counter, heat_water_counter, dn_station,ahu, itp]
 
