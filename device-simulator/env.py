@@ -112,7 +112,7 @@ itp = {"name": "itp",
        "set_gvs_temp": 55.0,
        "set_ot_temp": 68
        }
-       grp = {"name": "grp",
+grp = {"name": "grp",
        "qs_on": True,
        "qs_off": True,
        "qs_alarm": True,
@@ -156,7 +156,7 @@ itp = {"name": "itp",
        "2qf6_off": False,
        "2qf6_alarm": False
        }
-       light = {"name": "light",
+light = {"name": "light",
          "lamp_1": True,
          "lamp_1_start": True,
          "lamp_1_dimm": 50,
@@ -194,8 +194,7 @@ itp = {"name": "itp",
          "lamp_12_start": True,
          "lamp_12_dimm": 50
          }
-
-         water_station = {"name": "water_station",
+water_station = {"name": "water_station",
                  "pe_1": 1.4,
                  "pe_2": 3.2,
                  "pe_3": 3.1,
