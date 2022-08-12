@@ -56,8 +56,8 @@ class DeviceSimulator:
                         device[key] = curr_v
 
             self.send_json = json.dumps(device)
-            self.client.publish(device['name'], payload=self.send_json, qos=0, retain=False)
-            logger.debug(f"Publish topic /{device['name']}...")
+            self.client.publish(f"lucenko/{device['name']}", payload=self.send_json, qos=0, retain=True)
+            logger.debug(f"Publish topic lucenko/{device['name']}...")
 
 
 def run():
