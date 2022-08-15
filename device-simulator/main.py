@@ -27,7 +27,6 @@ class DeviceSimulator:
                                    transport=self.type)
         self.devices = DEVICES  # devices which is emulated here
 
-
     def create_client(self):
         self.client.ws_set_options(path=self.url_path, headers=None)
         self.client.username_pw_set(self.user_name, password=self.user_pass)
@@ -36,28 +35,48 @@ class DeviceSimulator:
         # client.tls_set(ca_certs=None, certfile=None, keyfile=None, cert_reqs=None,tls_version=ssl.PROTOCOL_TLS, ciphers=None)
         # client.tls_insecure_set(True)
 
+    def lift(self):
+        device = {"name": "lift", "stage-1": False, "stage-2": False, "stage-3": False, "stage-4": False,
+                "stage-5": False, "stage-6": False, "stage-7": False, "door": False}
+        stage = random.choice([1,2,3,4,5,6,7])
+        door = random.choice([True, False, False, True, True, False])
+        for i in device.keys():
+            #print(i)
+            if str(stage) in i:
+                print(str(stage))
+                print (i)
+                device[i] = True
+            device["door"] = door
+        self.send_json = json.dumps(device)
+        self.client.publish(f"lucenko/{device['name']}", payload=self.send_json, qos=0, retain=True)
+        logger.debug(f"Publish topic lucenko/{device['name']}...")
+
+
     def connect_client(self):
         self.client.connect(self.broker, port=self.broker_port, keepalive=60, bind_address="")
         logger.debug(f"Connection to {self.broker}:{self.broker_port} READY")
 
     def publishing(self):
         for device in self.devices:
-            for key, value in device.items():
-                if key == 'name':
-                    pass
-                else:
-                    if value == True or value == False:
-                        curr_v = random.choice([True, False, True, False])
+            if device['name'] == "lift":
+                self.lift()
+            else:
+                for key, value in device.items():
+                    if key == 'name':
+                        pass
+                    else:
+                        if value == True or value == False:
+                            curr_v = random.choice([True, False, True, False])
 
-                        device[key] = curr_v
-                    elif isinstance(value, (int, float)):
-                        
-                        curr_v = round(uniform(device[key] * 0.99, device[key] * 1.01), 2)
-                        device[key] = curr_v
+                            device[key] = curr_v
+                        elif isinstance(value, (int, float)):
 
-            self.send_json = json.dumps(device)
-            self.client.publish(f"lucenko/{device['name']}", payload=self.send_json, qos=0, retain=True)
-            logger.debug(f"Publish topic lucenko/{device['name']}...")
+                            curr_v = round(uniform(device[key] * 0.99, device[key] * 1.01), 2)
+                            device[key] = curr_v
+
+                self.send_json = json.dumps(device)
+                self.client.publish(f"lucenko/{device['name']}", payload=self.send_json, qos=0, retain=True)
+                logger.debug(f"Publish topic lucenko/{device['name']}...")
 
 
 def run():
