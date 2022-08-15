@@ -215,6 +215,6 @@ cool_center = {"name": "coolCenter", "te-1": 13.4, "pe-1": 6.2, "te-2": 11.1, "p
                "y6": False, "y7": False, "y8": True, "y9": True,"uao1": False, 'uao2': True, "uoo": False,"dps1": True,
                "dps2": False,"nc1": True, "nc2": False, "nc3": True, "nc4": False}
 
+lift = {"stage-1": False,"stage-2": False,"stage-3": False,"stage-4": False,"stage-5": False,"stage-6": False,"stage-7": False, "door": False }
 
-
-DEVICES = [heat_counter, el_counter, cool_water_counter, heat_water_counter, dn_station,ahu, itp, grp, light, water_station, cool_center]
+DEVICES = [heat_counter, el_counter, cool_water_counter, heat_water_counter, dn_station,ahu, itp, grp, light, water_station, cool_center, lift]
